@@ -32,8 +32,12 @@ m.Minimize(p[0]*l_plus[0] + p[0]*l_plus[1])
 # Equations
 m.Equation(w1 + w2 == 1)
 
-# m.Equation(0.05*u1 <= w1 <= 0.2*u1)
-# m.Equation(0.05*u2 <= w2 <= 0.2*u2)
+# Weight Constraints
+m.Equation(w1/u1 >= 0.1)
+m.Equation(w1/u1 <= 0.8)
+m.Equation(w2/u2 >= 0.1)
+m.Equation(w2/u2 <= 0.8)
+
 
 m.solve()
 print('w1: ' + str(w1.value))
