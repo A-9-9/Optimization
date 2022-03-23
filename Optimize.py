@@ -33,6 +33,7 @@ m.Minimize(p[0]*l_plus[0] + p[0]*l_plus[1])
 m.Equation(w1 + w2 == 1)
 
 # Weight Constraints
+# Cause of there's only two of the asset, so set the maximize lager then usual
 m.Equation(w1/u1 >= 0.1)
 m.Equation(w1/u1 <= 0.8)
 m.Equation(w2/u2 >= 0.1)
